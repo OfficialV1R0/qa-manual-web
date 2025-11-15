@@ -1,24 +1,14 @@
-# Test Report – Sauce Demo (verze 0.1)
+﻿## Test Report - Sauce Demo (auto)
 
-Datum spuštění: (doplň)  
-Tester: Veronika Oulická
+Datum: 2025-11-15 15:03
+Prostredi: Windows / Chrome
 
-Souhrn:
-(2–4 věty: co fungovalo, kde nejvíc chyb, celkový dojem)
+### Souhrn
+- Pocet testu: 15
+- PASS: 0
+- FAIL: 0
+- BLOCKED: 0
+- NEPROVEDENO: 15
 
-Metriky:
-- Test cases naplánováno: X
-- Test cases provedeno: X
-- Pass: X | Fail: X | Blocked: X
-- Počet nahlášených bugů: X
-- Rozdělení bugů dle Severity: Critical ?, High ?, Medium ?, Low ?
-
-Seznam klíčových bugů:
-- #ID – krátký popis (Severity, Priority)
-- #ID – krátký popis (Severity, Priority)
-
-Doporučení:
-- (Např.) Přidat validace u loginu, zlepšit hlášky, sjednotit chybové texty.
-
-Poznámky:
-- Provedeno v Chrome verze (doplň), OS (doplň).
+### Poznamky
+Tento report je generovan ze souboru .\testcases\web_test_cases.csv. Po uprave statusu spust znovu skript: .\\scripts\\update-test-report.ps1
