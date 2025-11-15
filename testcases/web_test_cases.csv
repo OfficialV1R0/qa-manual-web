@@ -11,6 +11,6 @@ WEB-CART-003,Košík,Přidání dvou různých položek,Přihlášen,1 Add item 
 WEB-CART-004,Košík,Odstranění z detailu košíku,Přidány 2 položky,1 Otevřít košík 2 Klik Remove u jedné,Upraven badge na '1',Medium,NEPROVEDENO,
 WEB-FILTER-001,Sort,Řazení A-Z,Přihlášen na inventory,1 Otevřít sort dropdown 2 Vybrat Name (A to Z),Položky se seřadí abecedně vzestupně,Low,NEPROVEDENO,
 WEB-SESSION-001,Session,Back po logoutu,Přihlášen a provést logout,1 Logout 2 Browser Back,Nesmí zobrazit inventory (má být login),Low,NEPROVEDENO,
-WEB-LOGIN-006,Login,Mezery kolem jména (trim),Stránka loginu,1 Vyplnit " standard_user " 2 Vyplnit secret_sauce 3 Login,Přihlášení úspěšné (username je oříznut o mezery),Medium,FAIL,"Username s mezerami neprošel (oček. trim)"
+WEB-LOGIN-006,Login,Mezery kolem jména (trim),Stránka loginu,1 Vyplnit " standard_user " 2 Vyplnit secret_sauce 3 Login,Přihlášení úspěšné (username je oříznut o mezery),Medium,FAIL,"Username s mezerami neprošel (oček. trim) #1"
 WEB-CART-005,Košík,Refresh po přidání,Přihlášen,1 Klik Add to cart u libovolné položky 2 Obnovit stránku,Badge u košíku zůstává '1' i po refreshi,High,NEPROVEDENO,
 WEB-FILTER-002,Sort,Přepínání A-Z -> Z-A -> A-Z,Přihlášen na inventory,1 Nastavit A-Z 2 Změnit na Z-A 3 Změnit zpět na A-Z,Konečné pořadí odpovídá A-Z (zachována logika),Low,NEPROVEDENO,
