@@ -2,7 +2,7 @@
 
 Autor: Veronika Oulická
 Datum vytvoření: 2025-11-15
-Poslední aktualizace: 2025-11-15
+Poslední aktualizace: 2025-11-16
 
 Prostředí:
 - OS: Windows
@@ -17,7 +17,7 @@ Oblast testování:
 
 - Přihlášení/registrace
 - Hlavní navigace
-- Formularové vstupy a validace
+- Formulářové vstupy a validace
 - Základní CRUD operace
 
 Přístup:

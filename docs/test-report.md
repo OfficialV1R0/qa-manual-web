@@ -1,6 +1,6 @@
 ﻿## Test report - Sauce Demo (auto)
 
-Datum: 2025-11-16 13:07
+Datum: 2025-11-16 13:29
 Prostredi: Windows / Chrome
 
 ### Souhrn
@@ -18,7 +18,7 @@ Prostredi: Windows / Chrome
 - WEB-LOGIN-006 - Mezery kolem jména (trim) - #1
 
 ### Shrnuti
-Bylo provedeno 15 testu v prostredi Windows / Chrome. Z toho 1 testu selhal(o); prioritou je oprava znamych chyb a opakovani testu. Odkazy na nahlasene chyby: 1 (#1).  Selhani sledovano v issue: #1. Doporuceni: opravit nejkritictejsi bugy a provest rychly regres prihlaseni.
+Bylo provedeno 15 testu v prostredi Windows / Chrome. Z toho 1 testu selhal(o); prioritou je oprava znamych chyb a opakovani testu. Odkazy na nahlasene chyby: 1 (#1). Selhani sledovano v issue: #1. Doporuceni: opravit nejkritictejsi bugy a provest rychly regres prihlaseni.
 
 ### Poznamky
 Tento report je generovan ze souboru c:\Users\oulic\Desktop\QA portfolio\qa-manual-web\testcases\web_test_cases.csv. Po uprave statusu spust znovu skript: .\\scripts\\update-test-report.ps1
