@@ -5,7 +5,7 @@ Krátký cíl: Ukázka systematického manuálního testování veřejného demo
 Artefakty:
 - Test plan: [docs/test-plan.md](docs/test-plan.md)
 - Test cases (CSV): [testcases/web_test_cases.csv](testcases/web_test_cases.csv)
-- Bug reporty: GitHub Issues (label `bug`)
+- Issues: [https://github.com/OfficialV1R0/qa-manual-web/issues](https://github.com/OfficialV1R0/qa-manual-web/issues) (label `bug`)
 - Test report: [docs/test-report.md](docs/test-report.md)
 
 Scope (zatím):
