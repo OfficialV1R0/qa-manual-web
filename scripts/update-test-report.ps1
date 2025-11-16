@@ -87,7 +87,7 @@ $content += ""
 $summary = @()
 $summary += "Bylo provedeno $total testu v prostredi $EnvOS / $Browser."
 if ($fail -gt 0) {
-    $summary += "Z toho $fail test(ů) selhal(o); prioritou je oprava znamych chyb a opakovani testu."
+    $summary += "Z toho $fail testu selhal(o); prioritou je oprava znamych chyb a opakovani testu."
 } else {
     $summary += "Vsechny testy prosly, bez selhani."
 }
@@ -95,7 +95,7 @@ if ($blocked -gt 0) { $summary += "Blokovanych: $blocked (nutna priprava prostre
 $summary += "Odkazy na nahlasene chyby: $bugIssueCount issue(s)."
 $summary += "Doporuceni: opravit nejkritictejsi bugy a provest rychly regres prihlaseni."
 
-$content += "### Shrnutí"
+$content += "### Shrnuti"
 $content += ($summary -join ' ')
 $content += ""
 
