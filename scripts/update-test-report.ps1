@@ -28,13 +28,14 @@ $date = Get-Date -Format 'yyyy-MM-dd HH:mm'
 $issuePattern = '#\d+'
 $issues = @()
 foreach ($row in $data) {
-    $notes = [string]$row.'Poznámky'
+    $props = $row.PSObject.Properties
+    $notesProp = ($props | Where-Object { $_.Name -match '(?i)poz.*ky' })[0]
+    $notes = [string]$notesProp.Value
     if ($notes) {
-        $matches = [regex]::Matches($notes, $issuePattern)
-        foreach ($m in $matches) { $issues += $m.Value }
+        [regex]::Matches($notes, $issuePattern) | ForEach-Object { $issues += $_.Value }
     }
 }
-$bugIssueCount = ($issues | Select-Object -Unique).Count
+$bugIssueCount = (@($issues | Select-Object -Unique)).Count
 
 $content = @()
 $content += "## Test report - Sauce Demo (auto)"
@@ -55,7 +56,10 @@ $failed = $data | Where-Object { (([string]$_.Status).Trim().ToUpper()) -eq 'FAI
 if (@($failed).Count -gt 0) {
     $content += "### Selhane testy"
     foreach ($row in @($failed)) {
-        $content += "- $($row.ID) - $($row.'Název') - $($row.'Poznámky')"
+        $props = $row.PSObject.Properties
+        $nameVal  = [string](($props | Where-Object { $_.Name -match '(?i)n.*zev' })[0].Value)
+        $notesVal = [string](($props | Where-Object { $_.Name -match '(?i)poz.*ky' })[0].Value)
+        $content += "- $($row.ID) - $nameVal - $notesVal"
     }
     $content += ""
 }
@@ -66,12 +70,12 @@ if (@($failed).Count -gt 0) {
     $i = 0
     foreach ($row in @($failed)) {
         if ($i -ge 3) { break }
-        $notes = [string]$row.'Poznámky'
+        $props = $row.PSObject.Properties
+        $notes = [string](($props | Where-Object { $_.Name -match '(?i)poz.*ky' })[0].Value)
         $issueMatch = [regex]::Match($notes, $issuePattern)
-        if (-not $issueMatch.Success) {
-            if ($notes -match $issuePattern) { $issueRef = $matches[0].Value } else { $issueRef = "(bez cisla issue)" }
-        } else { $issueRef = $issueMatch.Value }
-        $content += "- $($row.ID) - $($row.'Název') - $issueRef"
+        $issueRef = if ($issueMatch.Success) { $issueMatch.Value } else { "(bez cisla issue)" }
+        $nameVal  = [string](($props | Where-Object { $_.Name -match '(?i)n.*zev' })[0].Value)
+        $content += "- $($row.ID) - $nameVal - $issueRef"
         $i++
     }
 } else {
