@@ -1,24 +1,24 @@
-﻿## Test report - Sauce Demo (auto)
+﻿# Test Report – Sauce Demo (verze 0.1)
 
-Datum: 2025-11-16 13:29
-Prostredi: Windows / Chrome
+Datum: 2025-11-16  
+Tester: Veronika Oulická
 
-### Souhrn
-- Pocet testu: 15
-- PASS: 14
-- FAIL: 1
-- BLOCKED: 0
-- NEPROVEDENO: 0
-- Pocet bug issues: 1
+## Souhrn
+Bylo provedeno 15 testů zaměřených na login, katalog a košík. 14 testů prošlo, 1 selhal. Nalezen 1 defekt (Severity: Medium) související s loginem a zpracováním mezer v uživatelském jméně. Doporučuji doplnit trim vstupů na login formuláři a sjednotit chybové hlášky.
 
-### Selhane testy
-- WEB-LOGIN-006 - Mezery kolem jména (trim) - Username s mezerami neprošel (oček. trim) #1
+## Metriky
+- Test cases naplánováno: 15  
+- Test cases provedeno: 15  
+- Pass: 14 | Fail: 1 | Blocked: 0 | Neprovedeno: 0  
+- Počet bug Issues: 1
 
-### Hlavni bugy
-- WEB-LOGIN-006 - Mezery kolem jména (trim) - #1
+## Selhané testy
+- WEB-LOGIN-006 – Mezery kolem jména (trim) – Username s mezerami neprošel (oček. trim). Viz Issue [#1](https://github.com/OfficialV1R0/qa-manual-web/issues/1).
 
-### Shrnuti
-Bylo provedeno 15 testu v prostredi Windows / Chrome. Z toho 1 testu selhal(o); prioritou je oprava znamych chyb a opakovani testu. Odkazy na nahlasene chyby: 1 (#1). Selhani sledovano v issue: #1. Doporuceni: opravit nejkritictejsi bugy a provest rychly regres prihlaseni.
+## Prostředí
+- OS: Windows 11  
+- Prohlížeč: Chrome 119  
 
-### Poznamky
-Tento report je generovan ze souboru c:\Users\oulic\Desktop\QA portfolio\qa-manual-web\testcases\web_test_cases.csv. Po uprave statusu spust znovu skript: .\\scripts\\update-test-report.ps1
+## Doporučení
+- Trimovat whitespacy u uživatelského jména a hesla před validací.
+- Přidat jednotné a srozumitelné chybové hlášky při neúspěšném přihlášení.
