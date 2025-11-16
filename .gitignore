@@ -1,0 +1,7 @@
+# Ignore temporary/debug scripts
+scripts/*.ps1
+!scripts/update-test-report.ps1
+
+# macOS / Windows cruft
+.DS_Store
+Thumbs.db
