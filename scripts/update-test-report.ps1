@@ -35,7 +35,9 @@ foreach ($row in $data) {
         [regex]::Matches($notes, $issuePattern) | ForEach-Object { $issues += $_.Value }
     }
 }
-$bugIssueCount = (@($issues | Select-Object -Unique)).Count
+$issueUnique = @($issues | Select-Object -Unique)
+$bugIssueCount = $issueUnique.Count
+$issueList = if ($bugIssueCount -gt 0) { ($issueUnique -join ', ') } else { '' }
 
 $content = @()
 $content += "## Test report - Sauce Demo (auto)"
@@ -92,7 +94,8 @@ if ($fail -gt 0) {
     $summary += "Vsechny testy prosly, bez selhani."
 }
 if ($blocked -gt 0) { $summary += "Blokovanych: $blocked (nutna priprava prostredi nebo data)." }
-$summary += "Odkazy na nahlasene chyby: $bugIssueCount issue(s)."
+$summary += if ($bugIssueCount -gt 0) { "Odkazy na nahlasene chyby: $bugIssueCount (" + $issueList + ")." } else { "Odkazy na nahlasene chyby: 0." }
+$summary += if ($bugIssueCount -gt 0) { " Selhani sledovano v issue: " + $issueList + "." } else { "" }
 $summary += "Doporuceni: opravit nejkritictejsi bugy a provest rychly regres prihlaseni."
 
 $content += "### Shrnuti"

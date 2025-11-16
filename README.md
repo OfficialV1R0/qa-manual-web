@@ -22,3 +22,17 @@ Jak přidat bug:
 Přihlašovací údaje (demo):
 - Uživatelské jméno: `standard_user`
 - Heslo: `secret_sauce`
+
+## Jak vygenerovat test report (Windows/PowerShell)
+
+Report se generuje ze souboru `testcases/web_test_cases.csv` pomocí skriptu.
+
+Postup:
+1. Otevři PowerShell v kořenovém adresáři repozitáře.
+2. Spusť skript (možno upravit parametry OS/Browser):
+
+	powershell -NoProfile -ExecutionPolicy Bypass -File ".\scripts\update-test-report.ps1" -CsvPath ".\testcases\web_test_cases.csv" -ReportPath ".\docs\test-report.md" -EnvOS "Windows" -Browser "Chrome"
+
+3. Změny ulož a případně commitni/pushni.
+
+Poznámka: Statické nadpisy jsou bez diakritiky kvůli kompatibilitě PowerShell 5.1. Data z CSV (názvy testů, poznámky) zůstávají v češtině.
